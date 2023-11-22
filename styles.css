@@ -5,6 +5,7 @@
 }
 
 body {
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     color: var(--tg-theme-text-color);
@@ -13,8 +14,12 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 50%;
     margin-bottom: 10px;
+}
+
+h2 {
+    margin: 50% 0 5% 0;
 }
 
 #form {
@@ -47,4 +52,8 @@ input {
     font-size: 14px;
     border: 2px solid silver;
     border-radius: 5px;
+}
+
+#username_form, #lastname_form, #phone_form {
+    display: none;
 }

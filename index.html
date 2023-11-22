@@ -7,14 +7,35 @@
     <title>Регистрация</title>
 </head>
 <body>
-    <h1>Регистрация</h1>
+    <div id="start_registration">
+        <h1>Регистрация</h1>
+        <button id="start_registrate">Зарегистрироваться</button>
+    </div>
 
-    <form id="form">
+    <div id="username_form">
+        <h2>Введите своё имя</h2>
+        <input type="text" placeholder="Имя" id="user_name">
+        <button id="continue_username">Продолжить</button>
+    </div>
+
+    <div id="lastname_form">
+        <h2>Введите свою фамилию</h2>
+        <input type="text" placeholder="Фамилия" id="last_name">
+        <button id="continue_lastname">Продолжить</button>
+    </div>
+
+    <div id="phone_form">
+        <h2>Введите свой телефон</h2>
+        <input type="text" placeholder="Номер телефона" id="phone">
+        <button id="registrate">Зарегистрироваться</button>
+    </div>
+
+    <!-- <form id="form">
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Фамилия" id="last_name">
         <input type="text" placeholder="Номер телефона" id="phone">
         <button id="registrate">Зарегистрироваться</button>
-    </form>
+    </form> -->
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="script.js"></script>
