@@ -9,33 +9,81 @@
 <body>
     <div id="start_registration">
         <h1>Регистрация</h1>
-        <button id="start_registrate">Зарегистрироваться</button>
+        <button id="start_registrate">Начать</button>
     </div>
 
     <div id="username_form">
-        <h2>Введите своё имя</h2>
-        <input type="text" placeholder="Имя" id="user_name">
+        <h2>👋 Введи своё имя:</h2>
+        <input type="text" placeholder="Имя" id="username_input" class="write">
+        <p id="error_username"></p>
         <button id="continue_username">Продолжить</button>
     </div>
 
-    <div id="lastname_form">
-        <h2>Введите свою фамилию</h2>
-        <input type="text" placeholder="Фамилия" id="last_name">
-        <button id="continue_lastname">Продолжить</button>
+    <div id="gender_form">
+        <h2>Укажи свой пол:</h2>
+        <div id="gender_type">
+            <div id="gender">
+                <input type="radio" name="field_gender_type" id="input_male" class="radio">
+                <label for="input_male">💁‍♂️ Мужской</label>
+            </div>
+            <div id="gender">
+                <input type="radio" name="field_gender_type" id="input_female" class="radio">
+                <label for="input_female">💁‍♀️ Женский</label>
+            </div>
+        </div>
+        <p id="error_gender"></p>
+        <button id="continue_gender">Продолжить</button>
     </div>
 
-    <div id="phone_form">
-        <h2>Введите свой телефон</h2>
-        <input type="text" placeholder="Номер телефона" id="phone">
+    <div id="preferences_form">
+        <h2>❤️ С кем хочешь знакомиться?</h2>
+        <div id="preferences_type">
+            <div id="prefer">
+                <input type="radio" name="field_prefer_type" id="input_with_male" class="radio">
+                <label for="input_with_male">С мужчинами</label>
+            </div>
+            <div id="prefer">
+                <input type="radio" name="field_prefer_type" id="input_with_female" class="radio">
+                <label for="input_with_female">С женщинами</label>
+            </div>
+            <div id="prefer">
+                <input type="radio" name="field_prefer_type" id="input_with_everyone" class="radio">
+                <label for="input_with_everyone">Со всеми</label>
+            </div>
+        </div>
+        <p id="error_prefer"></p>
+        <button id="continue_prefer">Продолжить</button>
+    </div>
+
+    <div id="target_form">
+        <h2>🎯 Какие у тебя цели знакомства?</h2>
+        <p>Можно выбрать несколько</p>
+        <div id="target_type">
+            <div id="target">
+                <input type="checkbox" name="field_target_type" id="communication" class="radio">
+                <label for="communication">Общение</label>
+            </div>
+            <div id="target">
+                <input type="checkbox" name="field_target_type" id="party" class="radio">
+                <label for="party">Вечеринка</label>
+            </div>
+            <div id="target">
+                <input type="checkbox" name="field_target_type" id="18+" class="radio">
+                <label for="18+">Встреча 18+</label>
+            </div>
+            <div id="target">
+                <input type="checkbox" name="field_target_type" id="date" class="radio">
+                <label for="date">Свидание</label>
+            </div>
+            <div id="target">
+                <input type="checkbox" name="field_target_type" id="serious" class="radio">
+                <label for="serious">Серьезные отношения</label>
+            </div>
+        </div>
+        <p id="error_target"></p>
         <button id="registrate">Зарегистрироваться</button>
     </div>
 
-    <!-- <form id="form">
-        <input type="text" placeholder="Имя" id="user_name">
-        <input type="text" placeholder="Фамилия" id="last_name">
-        <input type="text" placeholder="Номер телефона" id="phone">
-        <button id="registrate">Зарегистрироваться</button>
-    </form> -->
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="script.js"></script>

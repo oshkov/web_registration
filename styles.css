@@ -12,14 +12,18 @@ body {
     background: var(--tg-theme-bg-color);
 }
 
+p {
+    margin-bottom: 10px;
+}
+
 h1 {
     text-align: center;
-    margin-top: 50%;
+    margin-top: 200px;
     margin-bottom: 10px;
 }
 
 h2 {
-    margin: 50% 0 5% 0;
+    margin: 100px 0 20px 0;
 }
 
 #form {
@@ -30,21 +34,26 @@ button {
     border: 0;
     border-radius: 5px;
     margin-top: 50px;
+    margin-bottom: 200px;
     height: 60px;
-    width: 200px;
+    width: 250px;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 500ms ease;
-    color: var(--tg-theme-button-color);
-    background: var(--tg-theme-button-text-color);
+    color: white;
+    background: green;
 }
 
 button:hover {
-    background: var(--tg-theme-secondary-bg-color);
+    background: rgb(0, 68, 0);
 }
 
-input {
+#error_username, #error_gender, #error_prefer, #error_target {
+    font-weight: 500;
+    color: red;
+}
+
+input.write {
     width: 80%;
     outline: none;
     margin: 10px 5%;
@@ -54,6 +63,37 @@ input {
     border-radius: 5px;
 }
 
-#username_form, #lastname_form, #phone_form {
+#username_form, #lastname_form, #gender_form, #preferences_form, #target_form {
     display: none;
+}
+
+#gender_type, #preferences_type, #target_type {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20% 0 20%;
+}
+
+#gender, #prefer, #target {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(223, 223, 223);
+    width: 100%;
+}
+
+input.radio {
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgb(153, 153, 153);
+    transition: 0.1s all linear;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+
+input.radio:checked {
+    border: 6px solid rgb(0, 0, 0);
 }
