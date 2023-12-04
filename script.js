@@ -73,19 +73,21 @@ registrate_btn.addEventListener('click', () => {
     // Добавление введенных данных в переменные
     let username = document.getElementById('username_input').value;
 
+    let gender
     if (inputGenderMale.checked === true) {
         gender = 'Мужчина'
     } else {
         gender = 'Женщина'
     }
 
+    let preferences
     if (inputPreferMale.checked === true) {
         preferences = 'С мужчинами'
     }
     if (inputPreferFemale.checked === true) {
         preferences = 'С женщинами'
     }
-    if (inputPreferMale.checked === true) {
+    if (inputPreferEveryone.checked === true) {
         inputPreferEveryone = 'Со всеми'
     }
 
@@ -97,7 +99,7 @@ registrate_btn.addEventListener('click', () => {
         targetList.push('Вечеринка')
     }
     if (inputTarget18.checked === true) {
-        targetList.push('18+')
+        targetList.push('Встреча 18+')
     }
     if (inputTargetDate.checked === true) {
         targetList.push('Свидание')

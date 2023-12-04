@@ -8,8 +8,8 @@ body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
-    color: var(--tg-theme-text-color);
-    background: var(--tg-theme-bg-color);
+    color: black;
+    background: white;
 }
 
 p {
