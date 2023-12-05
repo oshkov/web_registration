@@ -88,7 +88,7 @@ registrate_btn.addEventListener('click', () => {
         preferences = 'С женщинами'
     }
     if (inputPreferEveryone.checked === true) {
-        inputPreferEveryone = 'Со всеми'
+        preferences = 'Со всеми'
     }
 
     let targetList = []
