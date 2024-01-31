@@ -56,7 +56,7 @@ button:hover {
 input.write {
     width: 80%;
     outline: none;
-    margin: 10px 5%;
+    margin: 10px 5% 0px 5%;
     padding: 15px 10px;
     font-size: 14px;
     border: 2px solid silver;
@@ -107,4 +107,31 @@ input.radio {
 
 input.radio:checked {
     border: 6px solid rgb(0, 0, 0);
+}
+
+
+
+
+/* ВЫБОР ГОРОДА */
+.autocomplete-items {
+    margin: 0px 10% 0px 10%;
+    width: 80%;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
 }

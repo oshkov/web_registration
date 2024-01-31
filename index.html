@@ -47,13 +47,14 @@
 
     <div id="city_form">
         <h2>Укажи свой город:</h2>
-        <input type="text" list="cities" id="city_input" class="write">
-        <datalist id="cities">
-            <option value="Казань">
-        </datalist>
+        <div class="autocomplete">
+            <input type="text" id="city_input" placeholder="Город" class="write">
+        </div>
         <p class="error" id="error_city"></p>
         <button id="continue_city">Продолжить</button>
     </div>
+
+    
 
     <div id="preferences_form">
         <h2>❤️ С кем хочешь знакомиться?</h2>
