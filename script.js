@@ -1,17 +1,22 @@
 let tg = window.Telegram.WebApp
 
 // Кнопки
-let start_registrate_btn = document.getElementById('start_registrate')
+let url_btn = document.getElementById('continue_url')
 let username_btn = document.getElementById('continue_username')
-let lastname_btn = document.getElementById('continue_lastname')
+let age_btn = document.getElementById('continue_age')
 let gender_btn = document.getElementById('continue_gender')
+let city_btn = document.getElementById('continue_city')
 let prefer_btn = document.getElementById('continue_prefer')
+let target_btn = document.getElementById('continue_target')
 let registrate_btn = document.getElementById('registrate')
 
 // Блоки ввода данных
+let inputURL = document.getElementById('url_input')
 let inputUsername = document.getElementById('username_input')
+let inputAge = document.getElementById('age_input')
 let inputGenderMale = document.getElementById('input_male')
 let inputGenderFemale = document.getElementById('input_female')
+let inputCity = document.getElementById('city_input')
 let inputPreferMale = document.getElementById('input_with_male')
 let inputPreferFemale = document.getElementById('input_with_female')
 let inputPreferEveryone = document.getElementById('input_with_everyone')
@@ -21,8 +26,14 @@ let inputTarget18 = document.getElementById('18+')
 let inputTargetDate = document.getElementById('date')
 let inputTargetSerious = document.getElementById('serious')
 
-start_registrate_btn.addEventListener('click', () => {
-    document.getElementById('start_registration').style.display = 'none'
+url_btn.addEventListener('click', () => {
+    // Проверка на ввод ссылки
+    if (inputURL.value === '') {
+        document.getElementById('error_url').textContent = 'Введите ссылку'
+        return
+    }
+
+    document.getElementById('url_form').style.display = 'none'
     document.getElementById('username_form').style.display = 'block'
 })
 
@@ -34,6 +45,31 @@ username_btn.addEventListener('click', () => {
     }
 
     document.getElementById('username_form').style.display = 'none'
+    document.getElementById('age_form').style.display = 'block'
+})
+
+age_btn.addEventListener('click', () => {
+    // Проверка на ввод возраста
+    if (inputAge.value < 18) {
+        document.getElementById('error_age').textContent = 'Минимальный возраст 18 лет'
+        return
+    } else if (inputAge.value > 80) {
+        document.getElementById('error_age').textContent = 'Максимальный возраст 80 лет'
+        return
+    }
+
+    document.getElementById('age_form').style.display = 'none'
+    document.getElementById('city_form').style.display = 'block'
+})
+
+city_btn.addEventListener('click', () => {
+    // Проверка на ввод города
+    if (inputCity.value != 'Казань') {
+        document.getElementById('error_city').textContent = 'Выберите город из предложенных'
+        return
+    }
+
+    document.getElementById('city_form').style.display = 'none'
     document.getElementById('gender_form').style.display = 'block'
 })
 
@@ -59,7 +95,7 @@ prefer_btn.addEventListener('click', () => {
     document.getElementById('target_form').style.display = 'block'
 })
 
-registrate_btn.addEventListener('click', () => {
+target_btn.addEventListener('click', () => {
     // Проверка на выбор цели
     if (inputTargetCommunication.checked === false &&
         inputTargetParty.checked === false &&
@@ -70,13 +106,19 @@ registrate_btn.addEventListener('click', () => {
         return
     }
 
+    document.getElementById('target_form').style.display = 'none'
+    document.getElementById('about_form').style.display = 'block'
+})
+
+registrate_btn.addEventListener('click', () => {
     // Добавление введенных данных в переменные
     let username = document.getElementById('username_input').value;
 
     let gender
     if (inputGenderMale.checked === true) {
         gender = 'Мужчина'
-    } else {
+    } 
+    if (inputGenderFemale.checked === true) {
         gender = 'Женщина'
     }
 
@@ -90,6 +132,11 @@ registrate_btn.addEventListener('click', () => {
     if (inputPreferEveryone.checked === true) {
         preferences = 'Со всеми'
     }
+
+    let city = document.getElementById('city_input').value;
+    let age = document.getElementById('age_input').value;
+    let url = document.getElementById('url_input').value;
+    let about = document.getElementById('about_input').value;
 
     let targetList = []
     if (inputTargetCommunication.checked === true) {
@@ -113,6 +160,10 @@ registrate_btn.addEventListener('click', () => {
         name: username,
         gender: gender,
         preferences: preferences,
+        city: city,
+        age: age,
+        url: url,
+        about: about,
         target: targetList
     }
     console.log(data)

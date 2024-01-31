@@ -48,7 +48,7 @@ button:hover {
     background: rgb(0, 68, 0);
 }
 
-#error_username, #error_gender, #error_prefer, #error_target {
+.error {
     font-weight: 500;
     color: red;
 }
@@ -63,7 +63,18 @@ input.write {
     border-radius: 5px;
 }
 
-#username_form, #lastname_form, #gender_form, #preferences_form, #target_form {
+textarea {
+    width: 80%;
+    outline: none;
+    margin: 10px 5%;
+    padding: 15px 10px;
+    font-size: 14px;
+    border: 2px solid silver;
+    border-radius: 5px;
+    resize: none;
+}
+
+#username_form, #lastname_form, #gender_form, #preferences_form, #target_form, #age_form, #about_form, #city_form {
     display: none;
 }
 

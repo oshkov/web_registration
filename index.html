@@ -7,16 +7,26 @@
     <title>Регистрация</title>
 </head>
 <body>
-    <div id="start_registration">
-        <h1>Регистрация</h1>
-        <button id="start_registrate">Начать</button>
+    <div id="url_form">
+        <h2>👋 Введи ссылку на любую соцсеть, либо мессенджер:</h2>
+        <p>При взаимном лайке человек получит эту ссылку</p>
+        <input type="text" placeholder="Ссылка telegram / vk / instagram" id="url_input" class="write">
+        <p class="error" id="error_url"></p>
+        <button id="continue_url">Продолжить</button>
     </div>
 
     <div id="username_form">
-        <h2>👋 Введи своё имя:</h2>
+        <h2>Введи своё имя:</h2>
         <input type="text" placeholder="Имя" id="username_input" class="write">
-        <p id="error_username"></p>
+        <p class="error" id="error_username"></p>
         <button id="continue_username">Продолжить</button>
+    </div>
+
+    <div id="age_form">
+        <h2>Укажи свой возраст:</h2>
+        <input type="number" placeholder="Возраст" step="1" min="1" max="100" id="age_input" class="write">
+        <p class="error" id="error_age"></p>
+        <button id="continue_age">Продолжить</button>
     </div>
 
     <div id="gender_form">
@@ -31,8 +41,18 @@
                 <label for="input_female">💁‍♀️ Женский</label>
             </div>
         </div>
-        <p id="error_gender"></p>
+        <p class="error" id="error_gender"></p>
         <button id="continue_gender">Продолжить</button>
+    </div>
+
+    <div id="city_form">
+        <h2>Укажи свой город:</h2>
+        <input type="text" list="cities" id="city_input" class="write">
+        <datalist id="cities">
+            <option value="Казань">
+        </datalist>
+        <p class="error" id="error_city"></p>
+        <button id="continue_city">Продолжить</button>
     </div>
 
     <div id="preferences_form">
@@ -51,7 +71,7 @@
                 <label for="input_with_everyone">Со всеми</label>
             </div>
         </div>
-        <p id="error_prefer"></p>
+        <p class="error" id="error_prefer"></p>
         <button id="continue_prefer">Продолжить</button>
     </div>
 
@@ -80,7 +100,15 @@
                 <label for="serious">Серьезные отношения</label>
             </div>
         </div>
-        <p id="error_target"></p>
+        <p class="error" id="error_target"></p>
+        <button id="continue_target">Продолжить</button>
+    </div>
+
+    <div id="about_form">
+        <h2>Введи информацию о себе:</h2>
+        <p>Необязательное поле</p>
+        <textarea placeholder="О себе" id="about_input" class="write" rows="10" maxlength="300"></textarea>
+        <p class="error" id="error_about"></p>
         <button id="registrate">Зарегистрироваться</button>
     </div>
 
